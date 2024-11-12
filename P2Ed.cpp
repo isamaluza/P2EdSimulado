@@ -283,7 +283,12 @@ void exibirElementosArvore(NO* no, int qtEspacos)
 
 void exibirElementosEmOrdem(NO* no)
 {
-	
+	if (no == NULL) {
+		return;
+}
+	exibirElementosEmOrdem(no->esq);
+	cout << no->valor << endl;
+	exibirElementosEmOrdem(no->dir);
 }
 
 void buscarElementoArvore(NO* no, int valor)
